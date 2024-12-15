@@ -1,6 +1,7 @@
 package in.co.rays.ctl;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -29,6 +30,13 @@ public class WelcomeCtl {
 	@GetMapping("third")
 	public String display3() {
 		System.out.println("display3");
+		return "Welcome";
+	}
+
+	@GetMapping("getMessage")
+	public String getMessage(Model model) {
+		model.addAttribute("msg", "message send from getMessage method of WelcomeCtl Class....");
+		System.out.println("This is a getMessage method of WelcomeCtl Class....");
 		return "Welcome";
 	}
 
