@@ -1,5 +1,7 @@
 package in.co.rays.dto;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,34 +11,33 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 @Entity
-@Table(name = "st_user")
+@Table(name = "sst_user")
 
 public class UserDTO {
 
 	@Id
 	@GeneratedValue(generator = "ncsPk")
 	@GenericGenerator(name = "ncsPk", strategy = "native")
-
 	@Column(name = "ID", unique = true, nullable = false)
 	protected Long id = null;
 
 	@Column(name = "FIRST_NAME", length = 50)
-	private String firstName;
+	private String firstName = null;
 
 	@Column(name = "LAST_NAME", length = 50)
-	private String lastName;
+	private String lastName = null;
 
 	@Column(name = "LOGIN", length = 50)
-	private String login;
+	private String login = null;
 
 	@Column(name = "PASSWORD", length = 50)
-	private String password;
+	private String password = null;
 
 	@Column(name = "DOB", length = 50)
-	private String dob;
+	private Date dob = null;
 
 	@Column(name = "ADDRESS", length = 50)
-	private String address;
+	private String address = null;
 
 	public Long getId() {
 		return id;
@@ -78,11 +79,11 @@ public class UserDTO {
 		this.password = password;
 	}
 
-	public String getDob() {
+	public Date getDob() {
 		return dob;
 	}
 
-	public void setDob(String dob) {
+	public void setDob(Date dob) {
 		this.dob = dob;
 	}
 

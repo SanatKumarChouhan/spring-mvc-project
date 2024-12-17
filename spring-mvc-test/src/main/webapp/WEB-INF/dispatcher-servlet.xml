@@ -11,6 +11,8 @@
 
 	<context:component-scan
 		base-package="in.co.rays" />
+		
+		<import resource="hibernate-servlet.xml"/>
 
 	<bean id="ViewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
