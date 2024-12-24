@@ -47,19 +47,6 @@ public class UserCtl {
 		return "UserView";
 	}
 
-	@PostMapping
-	public String submit(@ModelAttribute("form") UserForm form) {
-
-		UserDTO dto = form.getDto();
-
-		if (form.getId() > 0) {
-			service.update(dto);
-		} else {
-			service.add(dto);
-		}
-		return "UserView";
-	}
-
 	@GetMapping("search")
 	public String diaplay(@ModelAttribute("form") UserForm form, Model model) {
 
@@ -74,6 +61,19 @@ public class UserCtl {
 
 		return "UserListView";
 
+	}
+
+	@PostMapping
+	public String submit(@ModelAttribute("form") UserForm form) {
+
+		UserDTO dto = form.getDto();
+
+		if (form.getId() > 0) {
+			service.update(dto);
+		} else {
+			service.add(dto);
+		}
+		return "UserView";
 	}
 
 	@PostMapping("search")
