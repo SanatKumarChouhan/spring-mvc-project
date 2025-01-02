@@ -1,6 +1,8 @@
 package in.co.rays.ctl;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -115,6 +117,8 @@ public class DemoCtl {
 		map1.put("dto1", dto1);
 		map1.put("dto2", dto2);
 
+		res.addData(dto);
+
 		res.addData(map1);
 
 		res.addMessage("user loggedIn successesfully.....");
@@ -127,24 +131,24 @@ public class DemoCtl {
 
 		return res;
 	}
-	
+
 	@PostMapping
 	public String submit() {
-		
+
 //		ORSResponse res=new ORSResponse();
 //		
 //		res.addData(person);
-		
+
 		return "This is submit() method of DemoCtl Class";
 	}
-	
+
 	@PostMapping("submit2")
 	public ORSResponse submit2(@RequestBody Person person) {
-		
-		ORSResponse res=new ORSResponse();
-		
+
+		ORSResponse res = new ORSResponse();
+
 		res.addData(person);
-		
+
 		return res;
 	}
 }

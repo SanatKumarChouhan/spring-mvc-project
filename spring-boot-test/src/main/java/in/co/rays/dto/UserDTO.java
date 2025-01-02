@@ -17,6 +17,7 @@ public class UserDTO {
 	@Id
 	@GeneratedValue(generator = "ncsPk")
 	@GenericGenerator(name = "ncsPk", strategy = "native")
+	
 	@Column(name = "ID", unique = true, nullable = false)
 	protected Long id;
 

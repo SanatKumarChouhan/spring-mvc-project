@@ -9,18 +9,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 import in.co.rays.common.ORSResponse;
 import in.co.rays.dto.UserDTO;
+import in.co.rays.form.LoginForm;
 import in.co.rays.form.UserRegistrationForm;
 import in.co.rays.service.UserService;
 
 @RestController
-@RequestMapping(value = "auth")
+@RequestMapping(value = "Auth")
 public class LoginCtl {
 
 	@Autowired
 	private UserService service;
 
 	@GetMapping
-	public String signUp1() {
+	public String display() {
 
 //		ORSResponse res = new ORSResponse();
 
@@ -42,8 +43,32 @@ public class LoginCtl {
 
 		long pk = service.add(dto);
 
-		res.addData(pk);
+		if (pk != 0) {
+
+		}
+
+		res.addData(dto);
+//		res.addData(pk);
 		res.addMessage("User Registered Successfully....!!!!");
+
+		return res;
+	}
+
+	@PostMapping("login")
+	public ORSResponse login(@RequestBody LoginForm form) {
+
+		ORSResponse res = new ORSResponse();
+
+		UserDTO dto = service.authenticate(form.getLoginId(), form.getPassword());
+
+		if (dto != null) {
+
+			res.addData(dto);
+			res.addMessage("User LoggedIn successfully....!!!");
+		} else {
+
+			res.addMessage("LoginId and Password is Invalid....!!!!");
+		}
 
 		return res;
 	}
