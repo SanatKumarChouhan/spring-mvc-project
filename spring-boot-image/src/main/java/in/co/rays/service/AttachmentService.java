@@ -51,7 +51,7 @@ public class AttachmentService {
 		if (id != null && id > 0) {
 			dao.update(dto);
 		} else {
-			dao.add(dto);
+			id = dao.add(dto);
 		}
 		return id;
 	}

@@ -15,17 +15,17 @@ import in.co.rays.common.BaseDTO;
 @Table(name = "ST_ATTACHMENT ")
 public class AttachmentDTO extends BaseDTO {
 
-	@Column(name = "NAME")
-	private String name;
+	@Column(name = "NAME", length = 100)
+	private String name = null;
 
-	@Column(name = "TYPE")
-	private String type;
+	@Column(name = "TYPE", length = 100)
+	private String type = null;;
 
-	@Column(name = "DESCRIPTION")
-	private String description;
+	@Column(name = "DESCRIPTION", length = 500)
+	private String description = null;;
 
 	@Column(name = "USER_ID")
-	private Long userId;
+	private Long userId = null;;
 
 	@Lob
 	@Column(name = "DOC")

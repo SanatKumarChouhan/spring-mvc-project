@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * @author Sanat Kumar Chouhan
  * 
- * this is out StartUp Class.
+ * this is our StartUp Class.
  *
  */
 @SpringBootApplication

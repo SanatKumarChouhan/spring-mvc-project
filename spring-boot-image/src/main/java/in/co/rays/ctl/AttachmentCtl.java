@@ -40,7 +40,7 @@ public class AttachmentCtl {
 
 		ORSResponse res = new ORSResponse();
 
-		res.addResult("image", imageId);
+		res.addResult("imageId", imageId);
 
 		return res;
 
