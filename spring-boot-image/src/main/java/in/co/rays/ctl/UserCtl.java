@@ -42,7 +42,6 @@ public class UserCtl extends BaseCtl {
 	@Autowired
 	private RoleService roleService;
 	
-	
 	@GetMapping("preload")
 	public ORSResponse preload() {
 
